@@ -268,7 +268,7 @@
 //#define KEY_RFKILL    247    /* Key that controls all radios */
 //#define KEY_MICMUTE   248    
 
-#define KEY_HYPER = 0x20
+#define KEY_HYPER       0x20
 
 /**
  * Checks if the key is a modifier key.
