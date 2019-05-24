@@ -128,7 +128,7 @@ void readConfiguration()
                 // Not useful on windows
                 continue;
 
-            case bindings:
+            case hyper:
             {
                 char* tokens = line;
                 char* token = strsep(&tokens, "=");
