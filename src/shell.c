@@ -23,13 +23,10 @@ HWINEVENTHOOK _winHook;
  */
 void CALLBACK winEventProc(HWINEVENTHOOK hook, DWORD event, HWND hwnd, LONG idObject, LONG idChild, DWORD dwEventThread, DWORD dwmsEventTime)
 {
-    if (event == EVENT_OBJECT_FOCUS)
-    {
-        Sleep(1);
-        dropKeys();
-        releaseInput();
-        bindInput();
-    }
+    dropKeys();
+    Sleep(1);
+    releaseInput();
+    bindInput();
 }
 
 /**
