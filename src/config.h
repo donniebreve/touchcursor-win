@@ -2,9 +2,14 @@
 #define config_header
 
 /**
+ * The hyper key;
+ */
+extern int hyperKey;
+
+/**
  * Map for keys and their conversion.
  */
-int keymap[256];
+extern int keymap[256];
 
 /**
  * Reads the configuration file.

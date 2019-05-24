@@ -8,10 +8,15 @@
 #include <string.h>
 #include <windows.h>
 
+#undef hyper
+
 #include "config.h"
 #include "getline.h"
 #include "keys.h"
 #include "strsep.h"
+
+int hyperKey;
+int keymap[256];
 
 /**
  * Trims a string.
@@ -67,6 +72,7 @@ static enum sections
 {
     none,
     device,
+    hyper,
     bindings
 } section;
 
@@ -104,6 +110,11 @@ void readConfiguration()
             section = device;
             continue;
         }
+        if (strncmp(line, "[Hyper]", strlen(line)) == 0)
+        {
+            section = hyper;
+            continue;
+        }
         if (strncmp(line, "[Bindings]", strlen(line)) == 0)
         {
             section = bindings;
@@ -116,6 +127,16 @@ void readConfiguration()
             case device:
                 // Not useful on windows
                 continue;
+
+            case bindings:
+            {
+                char* tokens = line;
+                char* token = strsep(&tokens, "=");
+                token = strsep(&tokens, "=");
+                int code = convertKeyStringToCode(token);
+                hyperKey = code;
+                break;
+            }
 
             case bindings:
             {

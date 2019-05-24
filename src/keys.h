@@ -266,9 +266,7 @@
 //#define KEY_WWAN      246    /* Wireless WAN (LTE, UMTS, GSM, etc.) */
 //#define KEY_WIMAX     KEY_WWAN
 //#define KEY_RFKILL    247    /* Key that controls all radios */
-//#define KEY_MICMUTE   248    
-
-#define KEY_HYPER       0x20
+//#define KEY_MICMUTE   248
 
 /**
  * Checks if the key is a modifier key.
