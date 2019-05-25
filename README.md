@@ -2,7 +2,7 @@
 Port of the touchcursor-linux project to windows.
 
 # [touchcursor-linux](https://github.com/donniebreve/touchcursor-linux)
-This application remaps the `uiophjklnmy` keys to different movement keys when the spacebar is pressed down, allowing you to keep your hands on the home row.
+This application was designed to remap the `uiophjklnmy` keys to different movement keys when the spacebar is pressed down, allowing you to keep your hands on the home row. It has grown to allow remapping all the keys, even the hyper key.
 
 ```
 i - up
@@ -19,9 +19,12 @@ y - insert
 ```
 
 # How to install
-Installation code is in progress.  
-To run: clone the repo, build with Visual Studio, copy the conf file beside the executable, run the executable.
+1. Clone or download this repo
+2. 'make' to build the application
+3. 'make install' to install the application
+4. Update the config at /etc/touchcursor/touchcursor.conf
 
 # Thanks to
-[Thomas Bocek](https://github.com/tbocek): check him out and thanks for the starting point.  
-[Martin Stone, Touch Cursor](https://github.com/martin-stone/touchcursor): wonderful project for cursor movement when coding.
+[Thomas Bocek, Dvorak](https://github.com/tbocek/dvorak): Check him out and thanks for the starting point. Good examples for capturing and modifying keyboard input in Linux, specifically Wayland.  
+  
+[Martin Stone, Touch Cursor](https://github.com/martin-stone/touchcursor): Wonderful project for cursor movement when coding.
