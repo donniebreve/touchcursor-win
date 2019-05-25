@@ -19,10 +19,8 @@ y - insert
 ```
 
 # How to install
-1. Clone or download this repo
-2. 'make' to build the application
-3. 'make install' to install the application
-4. Update the config at /etc/touchcursor/touchcursor.conf
+Installation code is in progress.  
+To run: clone the repo, build with Visual Studio, copy the conf file beside the executable, run the executable.
 
 # Thanks to
 [Thomas Bocek, Dvorak](https://github.com/tbocek/dvorak): Check him out and thanks for the starting point. Good examples for capturing and modifying keyboard input in Linux, specifically Wayland.  
