@@ -20,7 +20,7 @@ y - insert
 
 # How to install
 1. Download the latest [release](https://github.com/donniebreve/touchcursor-win/releases) and install
-2. Modify the configuration file at 'C:\Program Files (x86)\touchcursor-win\touchcursor-win.conf' (if necessary)
+2. Modify the configuration file at `C:\Program Files (x86)\touchcursor-win\touchcursor-win.conf` (if necessary)
 3. Run the application
 
 # Thanks to
