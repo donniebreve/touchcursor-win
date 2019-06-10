@@ -86,7 +86,7 @@ void readConfiguration()
     wchar_t path[MAX_PATH];
     getExePath(path);
 
-    wchar_t* configFilePath = wcscat(path, L"\\touchcursor.conf");
+    wchar_t* configFilePath = wcscat(path, L"\\touchcursor-win.conf");
     FILE* configFile = _wfopen(configFilePath, L"r");
     if (!configFile)
     {
