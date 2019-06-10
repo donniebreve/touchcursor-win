@@ -19,8 +19,9 @@ y - insert
 ```
 
 # How to install
-Installation code is in progress.  
-To run: clone the repo, build with Visual Studio, copy the conf file beside the executable, run the executable.
+1. Download the latest [release](https://github.com/donniebreve/touchcursor-win/releases) and install
+2. Modify the configuration file at 'C:\Program Files (x86)\touchcursor-win\touchcursor-win.conf' (if necessary)
+3. Run the application
 
 # Thanks to
 [Thomas Bocek, Dvorak](https://github.com/tbocek/dvorak): Check him out and thanks for the starting point. Good examples for capturing and modifying keyboard input in Linux, specifically Wayland.  
