@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?define ProductVersion = "1.0.0.0"?>
+<?define ProductUpgradeCode = "C5A93042-870A-4167-8FD8-6F09BA526EFD"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+    <Product Id="B704D450-CCB1-4525-9FB4-E4935578F8DB" UpgradeCode="$(var.ProductUpgradeCode)" Version="$(var.ProductVersion)" Name="touchcursor-win" Language="1033" Manufacturer="donniebreve">
+        <Package Description="touchcursor-win" Comments="TouchCursor for Windows" InstallerVersion="200" Compressed="yes" />
+        <Media Id="1" Cabinet="simple.cab" EmbedCab="yes" />
+		
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramMenuFolder">
+                <Directory Id="ProgramMenuDir" Name="touchcursor-win">
+                    <Component Id="ApplicationShortcuts" Guid="660FE2C5-DE88-4006-B123-89C149123129">
+                        <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+                        <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Type="string" Value="" />
+						<Shortcut Id="ExecutableShortcut" Name="touchcursor-win" Description="touchcursor-win" Target="[INSTALLDIR]touchcursor-win.exe" />
+                        <util:InternetShortcut Id="WebsiteShortcut" Name="project page" Target="https://github.com/donniebreve/touchcursor-win" />
+						<Shortcut Id="UninstallShortcut" Name="uninstall" Description="Uninstalls the application" Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode]" />
+                    </Component>
+                </Directory>
+            </Directory>
+            <Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLDIR" Name="touchcursor-win">
+				   <Component Id="ApplicationFiles" Guid="12345678-1234-1234-1234-222222222222">
+					  <File Id="Executable" Source="..\bin\touchcursor-win.exe" />
+					  <File Id="Config" Source="..\bin\touchcursor-win.conf" />
+				   </Component>
+				</Directory>
+			</Directory>
+        </Directory>
+		
+		<InstallExecuteSequence>
+			<RemoveExistingProducts After="InstallValidate"/>
+		</InstallExecuteSequence>
+		
+		<Feature Id="DefaultFeature" Level="1">
+			<ComponentRef Id="ApplicationShortcuts"/>
+			<ComponentRef Id="ApplicationFiles"/>
+		</Feature>
+		
+        <UI />
+        <UIRef Id="WixUI_Minimal" />
+    </Product>
+</Wix>
