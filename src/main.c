@@ -11,8 +11,8 @@
 */
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
 {
-	SetPriorityClass(GetCurrentThread(), THREAD_PRIORITY_ABOVE_NORMAL);
-	SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_TIME_CRITICAL);
+    SetPriorityClass(GetCurrentThread(), THREAD_PRIORITY_ABOVE_NORMAL);
+    SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_TIME_CRITICAL);
     createWindow(hInstance);
     readConfiguration();
     bindWinEvent();
