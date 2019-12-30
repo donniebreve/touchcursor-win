@@ -22,7 +22,7 @@
                 <Directory Id="INSTALLDIR" Name="touchcursor-win">
                    <Component Id="ApplicationFiles" Guid="12345678-1234-1234-1234-222222222222">
                       <File Id="Executable" Source="..\bin\touchcursor-win.exe" />
-                      <File Id="Config" Source="..\bin\touchcursor-win.conf" />
+                      <File Id="Config" Source="..\bin\touchcursor.conf" />
                    </Component>
                 </Directory>
             </Directory>

@@ -52,6 +52,17 @@ int isCommentOrEmpty(char* line)
 }
 
 /**
+ * Gets the user's home path.
+ */
+wchar_t* getHomePath(wchar_t* buffer)
+{
+    char* path = getenv("HOMEPATH");
+    size_t length = strlen(path) + 1;
+    mbstowcs(buffer, path, length);
+    return buffer;
+}
+
+/**
  * Gets the executable path.
  */
 wchar_t* getExePath(wchar_t* buffer)
@@ -84,14 +95,18 @@ void readConfiguration()
     for (int i = 0; i < 256; i++) keymap[i] = 0;
 
     wchar_t path[MAX_PATH];
-    getExePath(path);
-
-    wchar_t* configFilePath = wcscat(path, L"\\touchcursor-win.conf");
+    wchar_t* configFilePath = wcscat(getHomePath(path), L"\\.config\\touchcursor\\touchcursor.conf");
     FILE* configFile = _wfopen(configFilePath, L"r");
     if (!configFile)
     {
         fwprintf(stderr, L"error: could not open the configuration file at: %s\n", configFilePath);
-        return;
+        configFilePath = wcscat(getExePath(path), L"\\touchcursor.conf");
+        configFile = _wfopen(configFilePath, L"r");
+        if (!configFile)
+        {
+            fwprintf(stderr, L"error: could not open the configuration file at: %s\nexiting\n", configFilePath);
+            return;
+        }
     }
 
     char* buffer = NULL;
