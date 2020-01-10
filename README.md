@@ -1,6 +1,11 @@
 # touchcursor-win
 Port of the touchcursor-linux project to windows.
 
+## Why?
+1. I think my touchcursor code is more efficient
+2. Some sporadic key issues with the original project do not appear in this project
+3. The largest file in the project is the .ico
+
 # [touchcursor-linux](https://github.com/donniebreve/touchcursor-linux)
 This application was designed to remap the `uiophjklnmy` keys to different movement keys when the spacebar is pressed down, allowing you to keep your hands on the home row. It has grown to allow remapping all the keys, even the hyper key.
 
