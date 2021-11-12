@@ -269,6 +269,11 @@
 //#define KEY_MICMUTE   248
 
 /**
+ * Checks if the event is a key down.
+ */
+int isDown(int value);
+
+/**
  * Checks if the key is a modifier key.
  */
 int isModifier(int code);
