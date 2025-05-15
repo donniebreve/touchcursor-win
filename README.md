@@ -1,3 +1,6 @@
+# NOTICE
+This is not actively maintained.
+
 # touchcursor-win
 Port of the touchcursor-linux project to windows.
 
